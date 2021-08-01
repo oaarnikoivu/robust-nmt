@@ -4,17 +4,17 @@ data_dir=$1
 checkpoint_dir=$2 
 
 # Parameters to tune 
-patience=$1
-seed=$2
-layers=$3 
-heads=$4
-ffn_dim=$5
-dropout=$6
-attn_dropout=$7
-act_dropout=$8
-dec_layerdrop=$9
-enc_layerdrop=${10}
-smooth=${11}
+patience=$3
+seed=$4
+layers=$5 
+heads=$6
+ffn_dim=$7
+dropout=$8
+attn_dropout=$9
+act_dropout=${10}
+dec_layerdrop=${11}
+enc_layerdrop=${12}
+smooth=${13}
 
 # remove --fp16 if gpu does not support!
 # add --update-freq 8 if running on V100

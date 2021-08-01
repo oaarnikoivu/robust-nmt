@@ -46,7 +46,7 @@ for seed in 1 2 3; do
  
     mkdir -p $checkpoint_path
  
-    bash ../train_transformer_optim.sh $dest_path $checkpoint_path $patience $seed $layers $heads $ffn_dim $dropout $attn_dropout $act_dropout $dec_layerdrop $enc_layerdrop $smooth  
+    bash ../train_transformer_distillation.sh $dest_path $checkpoint_path $patience $seed $layers $heads $ffn_dim $dropout $attn_dropout $act_dropout $dec_layerdrop $enc_layerdrop $smooth  
 
     echo ""
     echo "Done training transformer for $experiment at seed $seed."
