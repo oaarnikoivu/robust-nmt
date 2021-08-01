@@ -11,7 +11,7 @@ experiment=$1
 size=$2
 
 for domain in law medical religion; do
-    bin_dir=$base/data-bin-distilled/$experiment/ood/$domain/$src-$tgt
+    bin_dir=base/test-bin-distilled/$experiment/$domain/$src-$tgt
 
 	for seed in 1 2 3; do 
 		echo "Evaluating the $domain domain at seed $seed:"
