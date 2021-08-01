@@ -1,5 +1,11 @@
 #!/bin/sh
 
+script_dir=`dirname "$0"`
+base=$script_dir/../..
+scripts=$base/scripts
+
+cd $base/tools 
+
 # Fairseq
 echo "Cloning Fairseq github repository"
 git clone https://github.com/pytorch/fairseq.git ./fairseq
@@ -28,6 +34,5 @@ pip install sacrebleu
 
 # sacremoses
 pip install sacremoses
-
 
 # Make sure to move necessary libraries run scripts to the tools directory! 

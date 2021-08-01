@@ -2,7 +2,11 @@
 
 # e.g. bash download_data.sh [directory to save data to]
 
-data_dir=$1
+script_dir=`dirname "$0"`
+base=$script_dir/../..
+scripts=$base/scripts
+
+data_dir=$base/$1
 
 mkdir -p $data_dir
 
