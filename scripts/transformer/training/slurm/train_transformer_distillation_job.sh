@@ -5,6 +5,8 @@
 #SBATCH --gres=gpu:1
 #SBATCH --partition=small
 
+# e.g. sbatch train_transformer_distillation_job.sh europarl_5k_bpe_10000 3 [remaining hyperparameters...]
+
 script_dir=`dirname "$0"`
 base=$script_dir/../../../..
 scripts=$base/scripts
@@ -26,18 +28,22 @@ mkdir -p $dest_path
 rsync --archive --update --compress --progress $src_path/ $dest_path
 
 experiment=$1 
+best_seed=$2
+
+# Path to best model checkpoint of optimized Transformer
+pretrain_model=$base/checkpoints/transformer_optim/$experiment/$best_seed
 
 # Parameters to tune
-patience=$2 
-layers=$3 
-heads=$4
-ffn_dim=$5
-dropout=$6
-attn_dropout=$7
-act_dropout=$8
-dec_layerdrop=$9
-enc_layerdrop=${10}
-smooth=${11}
+patience=$3
+layers=$4
+heads=$5
+ffn_dim=$6
+dropout=$7
+attn_dropout=$8
+act_dropout=$9
+dec_layerdrop=$10
+enc_layerdrop=${11}
+smooth=${12}
 
 for seed in 1 2 3; do
     echo "Training transformer on distilled translations for $experiment with seed $seed:"
@@ -46,7 +52,7 @@ for seed in 1 2 3; do
  
     mkdir -p $checkpoint_path
  
-    bash ../train_transformer_distillation.sh $dest_path $checkpoint_path $patience $seed $layers $heads $ffn_dim $dropout $attn_dropout $act_dropout $dec_layerdrop $enc_layerdrop $smooth  
+    bash ../train_transformer_distillation.sh $dest_path $checkpoint_path $pretrain_model $patience $seed $layers $heads $ffn_dim $dropout $attn_dropout $act_dropout $dec_layerdrop $enc_layerdrop $smooth  
 
     echo ""
     echo "Done training transformer for $experiment at seed $seed."

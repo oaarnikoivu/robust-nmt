@@ -19,12 +19,11 @@ for domain in law medical religion; do
 
     TEST=$data/out_domain/$domain/$experiment/bpe 
 
-	# Preprocess (can remove trainpref and validpref and replace with srcdict and tgtdict from previous preprocessing, which is faster!) 
 	fairseq-preprocess --source-lang $src --target-lang $tgt \
-		--trainpref $DISTILLED/bpe.train.distilled \
-		--validpref $DISTILLED/bpe.dev.distilled \
+		--srcdict $base/data-bin/$experiment/$src-$gt/dict.$src.txt \
+		--tgtdict $base/data-bin/$experiment/$src-$tgt/dict.$tgt.txt \
 		--testpref $TEST/bpe.test.truecased \
-		--destdir data-bin-distilled/$experiment/ood/$domain/$src-$tgt
+		--destdir $base/test-bin-distilled/$experiment/$domain/$src-$tgt
 done
 
 echo "Done."

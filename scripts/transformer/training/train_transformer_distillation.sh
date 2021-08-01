@@ -3,22 +3,26 @@
 data_dir=$1
 checkpoint_dir=$2 
 
+# Path to best optimized transformer checkpoint 
+pretrain_dir=$3 
+
 # Parameters to tune 
-patience=$3
-seed=$4
-layers=$5 
-heads=$6
-ffn_dim=$7
-dropout=$8
-attn_dropout=$9
-act_dropout=${10}
-dec_layerdrop=${11}
-enc_layerdrop=${12}
-smooth=${13}
+patience=$4
+seed=$5
+layers=$6 
+heads=$7
+ffn_dim=$8
+dropout=$9
+attn_dropout=$10
+act_dropout=${11}
+dec_layerdrop=${12}
+enc_layerdrop=${13}
+smooth=${14}
 
 # add --fp16 if running on V100
 # add --update-freq 8 if running on V100
 fairseq-train $data_dir \
+        --finetune-from-model $pretrain_dir \
         --arch transformer --share-decoder-input-output-embed \
         --optimizer adam --adam-betas '(0.9, 0.98)' --clip-norm 0.0 \
         --encoder-layers $layers --decoder-layers $layers \

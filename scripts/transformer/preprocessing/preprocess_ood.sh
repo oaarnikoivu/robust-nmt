@@ -26,9 +26,9 @@ ood=$data/out_domain/$domain
 
 shared_models=$base/shared_models
 
-BPE_CODE=$prep/$EXPERIMENT/bpe/code 
+BPE_CODE=$prep/$experiment/bpe/code 
 
-cd $ood && mkdir -p $EXPERIMENT && cd $EXPERIMENT && mkdir -p bpe && cd $scripts/preprocessing
+cd $ood && mkdir -p $experiment && cd $experiment && mkdir -p bpe && cd $scripts/preprocessing
 
 # deduplicate ood test set
 src_file=$ood/test.$src  

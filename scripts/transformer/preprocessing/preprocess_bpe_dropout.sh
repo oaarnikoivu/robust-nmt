@@ -21,7 +21,7 @@ data=$base/data
 prep=$data/in_domain/$size
 aug=$data/bpe_dropout/$size 
 
-BPE_CODE=$prep/$EXPERIMENT/bpe/code 
+BPE_CODE=$prep/$experiment/bpe/code 
 
 # apply bpe to train, dev and valid 
 for L in $src $tgt; do 

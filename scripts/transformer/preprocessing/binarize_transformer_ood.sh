@@ -25,10 +25,10 @@ for domain in law medical religion; do
 
     # Preprocess (can remove trainpref and validpref and replace with srcdict and tgtdict from previous preprocessing, which is faster!) 
     fairseq-preprocess --source-lang $src --target-lang $tgt \
-        --trainpref $IN_DOMAIN_TEXT/bpe.train.truecased \
-        --validpref $IN_DOMAIN_TEXT/bpe.dev.truecased \
+        --srcdict $data_bin/$experiment/$src-$tgt/dict.$src.txt \
+        --tgtdict $data_bin/$experiment/$src-$tgt/dict.$tgt.txt \
         --testpref $OOD_TEXT/bpe.test.truecased \
-        --destdir $data_bin/ood/$domain/$experiment/$src-$tgt 
+        --destdir $base/test-bin/$experiment/$domain/$src-$tgt 
 
     echo ""
 done 

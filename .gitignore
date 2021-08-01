@@ -1,6 +1,9 @@
 data-bin/
+test-bin/
 data-bin-distilled/
+test-bin-distilled/
 data-bin-dropout/
+test-bin-dropout/
 data/ 
 manual_evaluation/
 plots/
