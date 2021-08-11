@@ -95,3 +95,9 @@ To evaluate the student network, see scripts under scripts/transformer/evaluatio
     ./scripts/mbart/preprocessing/spm_tokenize.sh [corpus size]
     
     ./scripts/mbart/preprocessing/spm_tokenize_ood.sh
+    
+### Binarize
+
+    ./scripts/mbart/preprocessing/binarize.sh [corpus size]
+    
+    ./scripts/mbart/preprocessing/binarize_ood.sh [corpus size]
