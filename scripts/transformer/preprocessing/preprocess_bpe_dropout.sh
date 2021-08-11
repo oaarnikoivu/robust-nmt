@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# e.g. bash preprocess_dropout.sh europarl_5k_bpe_10000 europarl_5k 
+# e.g. bash preprocess_bpe_dropout.sh europarl_5k_bpe_30000 europarl_5k 
 
 script_dir=`dirname "$0"`
 base=$script_dir/../../..

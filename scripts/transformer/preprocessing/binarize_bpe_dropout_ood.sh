@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# e.g. bash binarize_bpe_dropout_ood.sh europarl_5k_bpe_30000 europarl_5k
+
 script_dir=`dirname "$0"`
 base=$script_dir/../../..
 scripts=$base/scripts
