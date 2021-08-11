@@ -90,14 +90,32 @@ To evaluate the student network, see scripts under scripts/transformer/evaluatio
 
 ## mBART25
 
+### Installing the pretrained model
+
+    ./scripts/mbart/get_pretrained_model.sh
+
 ### Tokenization
 
     ./scripts/mbart/preprocessing/spm_tokenize.sh [corpus size]
     
     ./scripts/mbart/preprocessing/spm_tokenize_ood.sh
     
+### Build new dictionary 
+
+    ./scripts/mbart/build_vocab.sh [corpus size]
+
+### Prune the pre-trained model
+
+    ./scripts/mbart/trim_mbart.sh
+
 ### Binarize
 
     ./scripts/mbart/preprocessing/binarize.sh [corpus size]
     
     ./scripts/mbart/preprocessing/binarize_ood.sh [corpus size]
+    
+### Fine-tunining
+For fine-tuning mBART25, see /scripts/mbart/finetune.sh
+
+### Evaluating
+For evaluating mBART25, see /scripts/mbart/eval.sh and /scripts/mbart/eval_ood.sh
