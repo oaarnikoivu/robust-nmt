@@ -49,3 +49,8 @@ This repository contains experimental code and scripts to reproduce the experime
 
     ./scripts/transformer/preprocessing/copy_corpus.sh [corpus size]
     ./scripts/transformer/preprocessing/copy_corpus.sh europarl_5k
+    
+#### Apply BPE-Dropout with p = 0.1
+
+    ./scripts/transformer/preprocessing/preprocess_bpe_dropout.sh [experiment name] [corpus size]
+    ./scripts/transformer/preprocessing/preprocess_bpe_dropout.sh europarl_5k_bpe_30000 europarl_5k
