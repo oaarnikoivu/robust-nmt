@@ -72,3 +72,8 @@ To train an indivudal model, see scripts under scripts/transformer/training
 
 ## Transformer Evaluation
 To evaluate an individual model, see scripts under scripts/transformer/evaluation
+
+### Distillation
+For distillation to work, first you must have trained a Transformer on one of the europarl subsets following the steps above.
+
+To generate a distilled training set, see scripts/transformer/translate
