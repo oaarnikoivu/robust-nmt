@@ -16,7 +16,7 @@ fairseq-train $data_dir \
     --max-tokens 4096 \
     --patience $patience \
     --seed $seed \
-	--ddp-backend no_c10d \
+    --ddp-backend no_c10d \
     --eval-bleu \
     --eval-bleu-args '{"beam": 5, "max_len_a": 1.2, "max_len_b": 10}' \
     --eval-bleu-detok moses \
