@@ -31,7 +31,7 @@ This repository contains experimental code and scripts to reproduce the experime
     ./scripts/transformer/preprocessing/preprocess_ood.sh europarl_5k_bpe_30000 europarl_5k medical
     ./scripts/transformer/preprocessing/preprocess_ood.sh europarl_5k_bpe_30000 europarl_5k religion
     
-#### Binarize
+#### Binarize 
 
 ##### In-domain
 
@@ -54,3 +54,8 @@ This repository contains experimental code and scripts to reproduce the experime
 
     ./scripts/transformer/preprocessing/preprocess_bpe_dropout.sh [experiment name] [corpus size]
     ./scripts/transformer/preprocessing/preprocess_bpe_dropout.sh europarl_5k_bpe_30000 europarl_5k
+
+#### Binarize BPE-Dropout 
+    
+    ./scripts/transformer/preprocessing/binarize_bpe_dropout.sh [experiment] [corpus size]
+    ./scripts/transformer/preprocessing/binarize_bpe_dropout.sh europarl_5k_bpe_30000 europarl_5k
