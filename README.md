@@ -86,7 +86,7 @@ To evaluate the student network, see scripts under scripts/transformer/evaluatio
 
 ### Distillation training
 
-For distillation training to work with Fairseq, modify the <strong>TransformerDecoder> class under /tools/fairseq/fairseq/models/transformer.py:
+For distillation training to work with Fairseq, modify the <strong>TransformerDecoder</strong> class under /tools/fairseq/fairseq/models/transformer.py:
 
 ```
 def upgrade_state_dict_named(self, state_dict, name):
@@ -140,9 +140,7 @@ def upgrade_state_dict_named(self, state_dict, name):
            state_dict[version_key] = torch.Tensor([1])
 
        return state_dict
-  ```
-
-
+```
 
 ## mBART25
 
