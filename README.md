@@ -86,7 +86,7 @@ To evaluate the student network, see scripts under scripts/transformer/evaluatio
 
 ### Distillation training
 
-For distillation training to work with Fairseq, modify the <strong>TransformerDecoder</strong> class under /tools/fairseq/fairseq/models/transformer.py:
+For distillation training to work with Fairseq, modify the <strong>TransformerDecoder</strong> class under /tools/fairseq/fairseq/models/transformer.py to the following:
 
 ```
 def upgrade_state_dict_named(self, state_dict, name):
@@ -141,6 +141,8 @@ def upgrade_state_dict_named(self, state_dict, name):
 
        return state_dict
 ```
+
+This allows you to initialize the parameters of the student network using the parameters of the teacher model.
 
 ## mBART25
 
