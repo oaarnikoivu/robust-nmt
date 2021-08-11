@@ -9,11 +9,13 @@ script_dir=`dirname "$0"`
 base=$script_dir/../../../..
 scripts=$base/scripts
 
-data=$base/data
-
 # Activate conda environment 
 #
 #
+
+experiment=$1 
+
+data=$base/data
 
 SCRATCH_HOME=/raid/local_scratch/$SLURM_JOB_USER-$SLURM_JOB_ID
 
@@ -24,8 +26,6 @@ mkdir -p $dest_path
 
 # Copy files required to run job 
 rsync --archive --update --compress --progress $src_path/ $dest_path
-
-experiment=$1 
 
 # Parameters to tune
 patience=$2 

@@ -11,6 +11,8 @@ script_dir=`dirname "$0"`
 base=$script_dir/../../../..
 scripts=$base/scripts
 
+experiment=$1 
+
 data=$base/data
 
 # Activate conda environment 
@@ -27,7 +29,6 @@ mkdir -p $dest_path
 # Copy files required to run job 
 rsync --archive --update --compress --progress $src_path/ $dest_path
 
-experiment=$1 
 best_seed=$2
 
 # Path to best model checkpoint of optimized Transformer

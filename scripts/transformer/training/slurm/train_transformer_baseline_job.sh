@@ -13,6 +13,8 @@ scripts=$base/scripts
 #
 #
 
+experiment=$1 
+
 SCRATCH_HOME=/raid/local_scratch/$SLURM_JOB_USER-$SLURM_JOB_ID
 
 data=$base/data
@@ -25,7 +27,6 @@ mkdir -p $dest_path
 # Copy files required to run job 
 rsync --archive --update --compress --progress $src_path/ $dest_path
 
-experiment=$1 
 patience=$2 
 
 for seed in 1 2 3; do
