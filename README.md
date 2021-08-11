@@ -73,5 +73,7 @@ To optimize the Transformer, see: <strong>scripts/transformer/training/train_tra
 
 #### Slurm
 To run with slurm, see and modify for your needs: 
+
 <strong>scripts/transformer/training/slurm/train_transformer_baseline_job.sh</strong> 
+
 <strong>scripts/transformer/training/slurm/optimize_transformer_job.sh</strong>
