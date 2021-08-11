@@ -17,4 +17,4 @@ This repository contains experimental code and scripts to reproduce the experime
 
 #### Truecaser learned on full in-domain Europarl corpus
 
-    /scripts/transformer/truecase.sh
+    /scripts/transformer/preprocessing/truecase.sh
