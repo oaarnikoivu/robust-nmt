@@ -28,5 +28,5 @@ cat $full_train_corpus/train.normalized.$src | $TOKENIZER -a -q -l $src > $full_
 cat $full_train_corpus/train.normalized.$tgt | $TOKENIZER -a -q -l $tgt > $full_train_corpus/train.tokenized.$tgt
 
 # learn truecase model on full training corpus (one for each language)
-$MOSES/recaser/train-truecaser.perl -corpus $full_train_corpus/train.tokenized.$src -model shared_models/$src$tgt.truecase-model.$src 
-$MOSES/recaser/train-truecaser.perl -corpus $full_train_corpus/train.tokenized.$tgt -model shared_models/$src$tgt.truecase-model.$tgt 
+$MOSES/recaser/train-truecaser.perl -corpus $full_train_corpus/train.tokenized.$src -model $base/shared_models/$src$tgt.truecase-model.$src 
+$MOSES/recaser/train-truecaser.perl -corpus $full_train_corpus/train.tokenized.$tgt -model $base/shared_models/$src$tgt.truecase-model.$tgt 

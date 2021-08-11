@@ -20,4 +20,4 @@ TEXT=$data/in_domain/$size/$experiment/bpe/
 
 fairseq-preprocess --source-lang $src --target-lang $tgt \
     --trainpref $TEXT/bpe.train.truecased --validpref $TEXT/bpe.dev.truecased --testpref $TEXT/bpe.test.truecased \
-    --destdir data-bin/$experiment/$src-$tgt 
+    --destdir $base/data-bin/$experiment/$src-$tgt 

@@ -17,18 +17,18 @@ domain=$3
 
 vocab_threshold=10
 
-BPEROOT=../subword-nmt/subword_nmt
+BPEROOT=$base/tools/subword-nmt/subword_nmt
 
 data=$base/data
 
-prep=.$data/in_domain/$size
+prep=$data/in_domain/$size
 ood=$data/out_domain/$domain
 
 shared_models=$base/shared_models
 
 BPE_CODE=$prep/$experiment/bpe/code 
 
-cd $ood && mkdir -p $experiment && cd $experiment && mkdir -p bpe && cd $scripts/preprocessing
+mkdir -p $ood/$experiment/bpe 
 
 # deduplicate ood test set
 src_file=$ood/test.$src  

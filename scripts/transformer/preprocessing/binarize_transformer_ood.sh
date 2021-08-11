@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# e.g. bash binarize_transformer_ood.sh europarl_5k_bpe_10000 europarl_5k
+
 script_dir=`dirname "$0"`
 base=$script_dir/../../..
 scripts=$base/scripts
@@ -11,6 +13,7 @@ experiment=$1
 size=$2
 
 data=$base/data
+data_bin=$base/data-bin
 
 IN_DOMAIN_TEXT=$data/in_domain/$size/$experiment/bpe/ 
 

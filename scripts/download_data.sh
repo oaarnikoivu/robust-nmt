@@ -3,7 +3,7 @@
 # e.g. bash download_data.sh [directory to save data to]
 
 script_dir=`dirname "$0"`
-base=$script_dir/../..
+base=$script_dir/..
 scripts=$base/scripts
 
 data_dir=$base/$1
@@ -40,9 +40,10 @@ unzip religion.zip
 rm religion.zip 
 cd ../../..
 
+
 echo ""
 echo "Creating datasets..."
-python sample_data.py $data_dir 
+python $scripts/sample_data.py $data_dir 
 
 cd $data_dir/in_domain/europarl && rm -rf Europarl.en-fi.en && rm -rf Europarl.en-fi.fi && rm -rf Europarl.en-fi.xml && rm -rf LICENSE && rm -rf README && cd ../../../
 cd $data_dir/out_domain/law && rm -rf JRC-Acquis.en-fi.en && rm -rf JRC-Acquis.en-fi.fi && rm -rf JRC-Acquis.en-fi.xml && rm -rf LICENSE && rm -rf README && cd ../../../

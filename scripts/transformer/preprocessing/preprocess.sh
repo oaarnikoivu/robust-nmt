@@ -30,7 +30,7 @@ shared_models=$base/shared_models
 
 rm -rf $prep/$experiment/bpe
 
-cd $prep && mkdir -p $experiment && cd $experiment && mkdir -p bpe && cd $scripts/preprocessing
+mkdir -p $prep/$experiment/bpe 
 
 # normalize train, dev and test in subsets 
 for corpus in train dev test; do 
