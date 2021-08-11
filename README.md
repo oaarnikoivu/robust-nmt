@@ -85,3 +85,5 @@ To prepare distilled training set for the student network:
     ./scripts/transformer/preprocessing/binarize_distillation_ood.sh [experiment name] [corpus size]
 
 To train the student network, see scripts under scripts/transformer/training
+
+To evaluate the student network, see scripts under scripts/transformer/evaluation
