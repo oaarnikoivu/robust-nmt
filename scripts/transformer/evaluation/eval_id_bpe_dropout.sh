@@ -16,11 +16,11 @@ bin_dir=$base/data-bin-dropout/$experiment/$src-$tgt/$l
 
 for seed in 1 2 3; do
 	echo "In domain evaluation at seed $seed:"
-
+	
 	checkpoint_dir=$base/checkpoints/transformer_bpe_dropout/$seed 
 	result_dir=$base/translations/transformer_bpe_dropout/$size/$seed 
-
-    mkdir -p $result_dir 
+	
+	mkdir -p $result_dir 
 
 	fairseq-generate $bin_dir \
 		--path $checkpoint_dir/checkpoint_best.pt \
