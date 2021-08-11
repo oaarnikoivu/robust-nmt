@@ -4,3 +4,4 @@ This repository contains experimental code and scripts to reproduce the experime
 
 # 1. Libraries 
 - Install the necessary libraries by executing the "install_libraries" script from the scripts directory.
+- This will install Fairseq, Mosesdecoder and the subword-nmt libraries.
