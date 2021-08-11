@@ -4,7 +4,7 @@ src=en
 tgt=fi 
 
 domain=$1
-data=../data/out_domain/$domain
+data=../../data/out_domain/$domain
 
 en_file=$data/test.truecased.$src 
 fi_file=$data/test.truecased.$tgt 
