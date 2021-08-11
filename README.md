@@ -12,3 +12,9 @@ This repository contains experimental code and scripts to reproduce the experime
 ### Download data
 
     /scripts/download_data.sh data
+
+### Transformer preprocessing
+
+#### Truecaser learned on full in-domain Europarl corpus
+
+    /scripts/transformer/truecase.sh
