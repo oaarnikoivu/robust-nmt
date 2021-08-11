@@ -69,3 +69,4 @@ This repository contains experimental code and scripts to reproduce the experime
     
 ### Training
 To train a Transformer with the baseline configuration, see: <strong>scripts/transformer/training/train_transformer_baseline.sh</strong>
+To optimize the Transformer, see: <strong>scripts/transformer/training/train_transformer_optim.sh</strong>
