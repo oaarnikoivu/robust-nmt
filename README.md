@@ -59,12 +59,15 @@ This repository contains experimental code and scripts to reproduce the experime
 ##### Out-of-domain
     
     ./scripts/transformer/preprocessing/binarize_bpe_dropout_ood.sh [experiment] [corpus size]
-    
-## Transformer Training
+     
+## Transformer Training and Evaluation
 To train an indivudal model, see scripts under scripts/transformer/training
 
-## Transformer Evaluation
 To evaluate an individual model, see scripts under scripts/transformer/evaluation
+
+Find example slurm scripts for training under scripts/transformer/training/slurm
+
+Find example slurm scripts for evaluation under scripts/transformer/evaluation/slurm
 
 ## Distillation
 For distillation to work, first you must have trained a Transformer on one of the europarl subsets following the steps above.
@@ -106,9 +109,7 @@ To evaluate the student network, see scripts under scripts/transformer/evaluatio
     ./scripts/mbart/preprocessing/binarize.sh [corpus size]
     
     ./scripts/mbart/preprocessing/binarize_ood.sh [corpus size
-    
-Find example slurm scripts for binarization under /scripts/mbart/preprocessing/slurm
-    
+        
 ### Training and Evaluation
 For fine-tuning mBART25, see /scripts/mbart/finetune.sh
 
