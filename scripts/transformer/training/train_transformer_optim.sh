@@ -32,10 +32,10 @@ fairseq-train $data_dir \
         --dropout $dropout --weight-decay 0.0001 \
         --criterion label_smoothed_cross_entropy --label-smoothing $smooth \
         --max-tokens 4096 \
+	--max-epoch 1 \
         --patience $patience \
         --seed $seed \
         --ddp-backend no_c10d \
-        --fp16 \
         --eval-bleu \
         --eval-bleu-args '{"beam": 5, "max_len_a": 1.2, "max_len_b": 10}' \
         --eval-bleu-detok moses \

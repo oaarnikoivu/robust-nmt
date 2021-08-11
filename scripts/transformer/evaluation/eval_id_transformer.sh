@@ -12,15 +12,15 @@ size=$2
 
 bin_dir=$base/data-bin/$experiment/$src-$tgt 
 
-for seed in 1 2 3; do
+for seed in 1; do
     echo "Evaluating at seed $seed:"
     
     # If evaluating the baseline change "transformer_optim" to "transformer_baseline" below!
     checkpoint_dir=$base/checkpoints/transformer_optim/$experiment/$seed
     result_dir=$base/translations/transformer_optim/$size/$seed
     
-    # checkpoint_dir=$base/checkpoints/transformer_baseline/$experiment/$seed
-    # result_dir=$base/translations/transformer_baseline/$size/$seed
+    #checkpoint_dir=$base/checkpoints/transformer_baseline/$experiment/$seed
+    #result_dir=$base/translations/transformer_baseline/$size/$seed
     
     fairseq-generate $bin_dir \
         --source-lang $src --target-lang $tgt \
