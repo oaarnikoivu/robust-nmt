@@ -107,11 +107,12 @@ To evaluate the student network, see scripts under scripts/transformer/evaluatio
     
     ./scripts/mbart/preprocessing/binarize_ood.sh [corpus size]
     
-### Fine-tunining
+### Training and Evaluation
 For fine-tuning mBART25, see /scripts/mbart/finetune.sh
 
-### Evaluating
 For evaluating mBART25, see /scripts/mbart/eval.sh and /scripts/mbart/eval_ood.sh
+
+Find example slurm scripts for training and evaluation in /scripts/mbart/slurm
 
 ## RNN
 
@@ -122,6 +123,4 @@ For evaluating mBART25, see /scripts/mbart/eval.sh and /scripts/mbart/eval_ood.s
 ### Training and Evaluation
 See /scripts/rnn/train.sh and /scripts/rnn/translate.sh
 
-## Slurm 
-
-Example slurm scripts can be found under each system directory. 
+Find example slurm scripts for training and evaluation in /scripts/rnn/slurm
