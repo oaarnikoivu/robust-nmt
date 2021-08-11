@@ -128,3 +128,7 @@ For evaluating mBART25, see /scripts/mbart/eval.sh and /scripts/mbart/eval_ood.s
     
 ### Training and Evaluation
 See /scripts/rnn/train.sh and /scripts/rnn/translate.sh
+
+## Slurm 
+
+Example slurm scripts can be found under each system directory. 
