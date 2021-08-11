@@ -87,3 +87,9 @@ To prepare distilled training set for the student network:
 To train the student network, see scripts under scripts/transformer/training
 
 To evaluate the student network, see scripts under scripts/transformer/evaluation
+
+## mBART25
+
+### Tokenization
+
+    ./scripts/mbart/preprocessing/spm_tokenize.sh [corpus size]
