@@ -1,5 +1,7 @@
 #!/bin/bash 
 
+# e.g. bash eval_ood_transformer.sh europarl_5k_bpe_10000 europarl_5k
+
 script_dir=`dirname "$0"`
 base=$script_dir/../../..
 scripts=$base/scripts

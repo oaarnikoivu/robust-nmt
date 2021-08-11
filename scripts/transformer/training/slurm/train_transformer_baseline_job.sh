@@ -9,13 +9,13 @@ script_dir=`dirname "$0"`
 base=$script_dir/../../../..
 scripts=$base/scripts
 
-data=$base/data
-
 # Activate conda environment 
 #
 #
 
 SCRATCH_HOME=/raid/local_scratch/$SLURM_JOB_USER-$SLURM_JOB_ID
+
+data=$base/data
 
 src_path=$data/data-bin/$experiment/en-fi
 dest_path=$SCRATCH_HOME/en-fi
@@ -42,7 +42,7 @@ for seed in 1 2 3; do
     echo ""
 
     # Move checkpoints back to base 
-    checkpoint_base=$base/checkpoints/transformer_baseline/$seed 
+    checkpoint_base=$base/checkpoints/transformer_baseline/$experiment/$seed 
 
     mkdir -p $checkpoint_base
 
