@@ -67,5 +67,8 @@ This repository contains experimental code and scripts to reproduce the experime
     ./scripts/transformer/preprocessing/binarize_bpe_dropout_ood.sh [experiment] [corpus size]
     ./scripts/transformer/preprocessing/binarize_bpe_dropout_ood.sh europarl_5k_bpe_30000 europarl_5k
     
-## Training
+## Transformer Training
 To train an indivudal model, see scripts under scripts/transformer/training
+
+## Transformer Evaluation
+To evaluate an individual model, see scripts under scripts/transformer/evaluation
