@@ -56,6 +56,13 @@ This repository contains experimental code and scripts to reproduce the experime
     ./scripts/transformer/preprocessing/preprocess_bpe_dropout.sh europarl_5k_bpe_30000 europarl_5k
 
 #### Binarize BPE-Dropout 
+
+##### In-domain
     
     ./scripts/transformer/preprocessing/binarize_bpe_dropout.sh [experiment] [corpus size]
     ./scripts/transformer/preprocessing/binarize_bpe_dropout.sh europarl_5k_bpe_30000 europarl_5k
+
+##### Out-of-domain
+    
+    ./scripts/transformer/preprocessing/binarize_bpe_dropout_ood.sh [experiment] [corpus size]
+    ./scripts/transformer/preprocessing/binarize_bpe_dropout_ood.sh europarl_5k_bpe_30000 europarl_5k
