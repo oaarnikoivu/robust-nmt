@@ -142,7 +142,7 @@ def upgrade_state_dict_named(self, state_dict, name):
        return state_dict
 ```
 
-This allows you to initialize the parameters of the student network using the parameters of the teacher model.
+This allows you to initialize the parameters of the student network using the parameters of the teacher model. 
 
 ## mBART25
 
@@ -176,6 +176,19 @@ For fine-tuning mBART25, see /scripts/mbart/finetune.sh
 For evaluating mBART25, see /scripts/mbart/eval.sh and /scripts/mbart/eval_ood.sh
 
 Find example slurm scripts for training and evaluation in /scripts/mbart/slurm
+
+I encountered a bug when fine-tuning mBART25 which was fixed by modifying the <strong>__init__</strong> function of the <strong>TranslationFromPretrainedBARTTask</strong> class under /tools/fairseq/fairseq/tasks/translation_from_pretrained_bart.py to the following: 
+
+```
+def __init__(self, args, src_dict, tgt_dict):
+        super().__init__(args, src_dict, tgt_dict)
+        self.args = args # required for mbart finetuning, can uncomment otherwise 
+        self.langs = args.langs.split(",")
+        for d in [src_dict, tgt_dict]:
+            for l in self.langs:
+                d.add_symbol("[{}]".format(l))
+            d.add_symbol("<mask>")
+```
 
 ## RNN
 
