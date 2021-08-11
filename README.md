@@ -68,4 +68,4 @@ This repository contains experimental code and scripts to reproduce the experime
     ./scripts/transformer/preprocessing/binarize_bpe_dropout_ood.sh europarl_5k_bpe_30000 europarl_5k
     
 ### Training
-To train a Transformer with the baseline configuration, see: <span>scripts/transformer/training</span>
+To train a Transformer with the baseline configuration, see: <strong>scripts/transformer/training/train_transformer_baseline.sh</strong>
