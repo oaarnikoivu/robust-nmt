@@ -67,13 +67,5 @@ This repository contains experimental code and scripts to reproduce the experime
     ./scripts/transformer/preprocessing/binarize_bpe_dropout_ood.sh [experiment] [corpus size]
     ./scripts/transformer/preprocessing/binarize_bpe_dropout_ood.sh europarl_5k_bpe_30000 europarl_5k
     
-### Training
-To train a Transformer with the baseline configuration, see: <strong>scripts/transformer/training/train_transformer_baseline.sh</strong>
-To optimize the Transformer, see: <strong>scripts/transformer/training/train_transformer_optim.sh</strong>
-
-#### Slurm
-To run with slurm, see and modify for your needs: 
-
-<strong>scripts/transformer/training/slurm/train_transformer_baseline_job.sh</strong> 
-
-<strong>scripts/transformer/training/slurm/optimize_transformer_job.sh</strong>
+## Training
+To train an indivudal model, see scripts under scripts/transformer/training
