@@ -119,3 +119,12 @@ For fine-tuning mBART25, see /scripts/mbart/finetune.sh
 
 ### Evaluating
 For evaluating mBART25, see /scripts/mbart/eval.sh and /scripts/mbart/eval_ood.sh
+
+## RNN
+
+### Build network dictionaries
+
+    ./scripts/rnn/jsonify.sh [experiment name] [corpus size]
+    
+### Training and Evaluation
+See /scripts/rnn/train.sh and /scripts/rnn/translate.sh
