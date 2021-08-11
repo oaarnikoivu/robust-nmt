@@ -105,7 +105,9 @@ To evaluate the student network, see scripts under scripts/transformer/evaluatio
 
     ./scripts/mbart/preprocessing/binarize.sh [corpus size]
     
-    ./scripts/mbart/preprocessing/binarize_ood.sh [corpus size]
+    ./scripts/mbart/preprocessing/binarize_ood.sh [corpus size
+    
+Find example slurm scripts for binarization under /scripts/mbart/preprocessing/slurm
     
 ### Training and Evaluation
 For fine-tuning mBART25, see /scripts/mbart/finetune.sh
