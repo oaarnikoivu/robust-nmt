@@ -27,7 +27,9 @@ This repository contains experimental code and scripts to reproduce the experime
 #### Out-of-domain Byte Pair Encoding
 
     ./scripts/transformer/preprocessing/preprocess_ood.sh [experiment name] [corpus size] [domain]
-    ./scripts/transformer/preprocessing/preprocess_ood.sh europarl_5k_bpe_30000 europarl_5k law 
+    ./scripts/transformer/preprocessing/preprocess_ood.sh europarl_5k_bpe_30000 europarl_5k law
+    ./scripts/transformer/preprocessing/preprocess_ood.sh europarl_5k_bpe_30000 europarl_5k medical
+    ./scripts/transformer/preprocessing/preprocess_ood.sh europarl_5k_bpe_30000 europarl_5k religion
     
 #### Binarize
 
@@ -35,3 +37,8 @@ This repository contains experimental code and scripts to reproduce the experime
 
     ./scripts/transformer/preprocessing/binarize_transformer.sh [experiment] [corpus size]
     ./scripts/transformer/preprocessing/binarize_transformer.sh europarl_5k_bpe_30000 europarl_5k
+    
+##### Out-of-domain
+
+    ./scripts/transformer/preprocessing/binarize_transformer_ood.sh [experiment] [corpus size]
+    ./scripts/transformer/preprocessing/binarize_transformer_ood.sh europarl_5k_bpe_30000 europarl_5k
