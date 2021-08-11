@@ -22,26 +22,22 @@ This repository contains experimental code and scripts to reproduce the experime
 #### In-domain Byte Pair Encoding
 
     ./scripts/transformer/preprocessing/preprocess.sh [experiment name] [corpus size] [number of bpe merge operations]
-    ./scripts/transformer/preprocessing/preprocess.sh europarl_5k_bpe_30000 europarl_5k 30000
+    
+    e.g. ./scripts/transformer/preprocessing/preprocess.sh europarl_5k_bpe_30000 europarl_5k 30000
 
 #### Out-of-domain Byte Pair Encoding
 
     ./scripts/transformer/preprocessing/preprocess_ood.sh [experiment name] [corpus size] [domain]
-    ./scripts/transformer/preprocessing/preprocess_ood.sh europarl_5k_bpe_30000 europarl_5k law
-    ./scripts/transformer/preprocessing/preprocess_ood.sh europarl_5k_bpe_30000 europarl_5k medical
-    ./scripts/transformer/preprocessing/preprocess_ood.sh europarl_5k_bpe_30000 europarl_5k religion
     
 #### Binarize 
 
 ##### In-domain
 
     ./scripts/transformer/preprocessing/binarize_transformer.sh [experiment] [corpus size]
-    ./scripts/transformer/preprocessing/binarize_transformer.sh europarl_5k_bpe_30000 europarl_5k
     
 ##### Out-of-domain
 
     ./scripts/transformer/preprocessing/binarize_transformer_ood.sh [experiment] [corpus size]
-    ./scripts/transformer/preprocessing/binarize_transformer_ood.sh europarl_5k_bpe_30000 europarl_5k
 
 ### BPE-Dropout
 
@@ -53,19 +49,16 @@ This repository contains experimental code and scripts to reproduce the experime
 #### Apply BPE-Dropout with p = 0.1
 
     ./scripts/transformer/preprocessing/preprocess_bpe_dropout.sh [experiment name] [corpus size]
-    ./scripts/transformer/preprocessing/preprocess_bpe_dropout.sh europarl_5k_bpe_30000 europarl_5k
 
 #### Binarize BPE-Dropout 
 
 ##### In-domain
     
     ./scripts/transformer/preprocessing/binarize_bpe_dropout.sh [experiment] [corpus size]
-    ./scripts/transformer/preprocessing/binarize_bpe_dropout.sh europarl_5k_bpe_30000 europarl_5k
 
 ##### Out-of-domain
     
     ./scripts/transformer/preprocessing/binarize_bpe_dropout_ood.sh [experiment] [corpus size]
-    ./scripts/transformer/preprocessing/binarize_bpe_dropout_ood.sh europarl_5k_bpe_30000 europarl_5k
     
 ## Transformer Training
 To train an indivudal model, see scripts under scripts/transformer/training
