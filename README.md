@@ -7,3 +7,8 @@ This repository contains experimental code and scripts to reproduce the experime
 ### Install required librarires
  
     /scripts/install_libraries.sh 
+
+
+### Download data
+
+    /scripts/download_data.sh data
