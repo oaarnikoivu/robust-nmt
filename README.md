@@ -18,3 +18,8 @@ This repository contains experimental code and scripts to reproduce the experime
 #### Truecaser learned on full in-domain Europarl corpus
 
     /scripts/transformer/preprocessing/truecase.sh
+    
+#### In-domain Byte Pair Encoding
+
+    /scripts/transformer/preprocessing/preprocess.sh [experiment name] [corpus size] [number of bpe merge operations]
+    /scripts/transformer/preprocessing/preprocess.sh europarl_5k_bpe_30000 europarl_5k 30000
