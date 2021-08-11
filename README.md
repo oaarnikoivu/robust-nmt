@@ -73,7 +73,7 @@ To train an indivudal model, see scripts under scripts/transformer/training
 ## Transformer Evaluation
 To evaluate an individual model, see scripts under scripts/transformer/evaluation
 
-### Distillation
+## Distillation
 For distillation to work, first you must have trained a Transformer on one of the europarl subsets following the steps above.
 
 To generate a distilled training set, see scripts/transformer/translate
@@ -83,3 +83,5 @@ To prepare distilled training set for the student network:
     ./scripts/transformer/preprocessing/binarize_distillation.sh [experiment name] [corpus size]
     
     ./scripts/transformer/preprocessing/binarize_distillation_ood.sh [experiment name] [corpus size]
+
+To train the student network, see scripts under scripts/transformer/training
