@@ -28,3 +28,10 @@ This repository contains experimental code and scripts to reproduce the experime
 
     ./scripts/transformer/preprocessing/preprocess_ood.sh [experiment name] [corpus size] [domain]
     ./scripts/transformer/preprocessing/preprocess_ood.sh europarl_5k_bpe_30000 europarl_5k law 
+    
+#### Binarize
+
+##### In-domain
+
+    ./scripts/transformer/preprocessing/binarize_transformer.sh [experiment] [corpus size]
+    ./scripts/transformer/preprocessing/binarize_transformer.sh europarl_5k_bpe_30000 europarl_5k
