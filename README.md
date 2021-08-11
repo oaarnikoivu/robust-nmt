@@ -42,3 +42,10 @@ This repository contains experimental code and scripts to reproduce the experime
 
     ./scripts/transformer/preprocessing/binarize_transformer_ood.sh [experiment] [corpus size]
     ./scripts/transformer/preprocessing/binarize_transformer_ood.sh europarl_5k_bpe_30000 europarl_5k
+
+### BPE-Dropout
+
+#### Copy the training corpus l=64 times
+
+    ./scripts/transformer/preprocessing/copy_corpus.sh [corpus size]
+    ./scripts/transformer/preprocessing/copy_corpus.sh europarl_5k
