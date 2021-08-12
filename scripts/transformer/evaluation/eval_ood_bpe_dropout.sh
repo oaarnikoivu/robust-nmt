@@ -10,18 +10,17 @@ tgt=fi
 experiment=$1
 size=$2
 
+l=64
+
 for domain in law medical religion; do 
-    bin_dir=$base/test-bin-dropout/$experiment/$domain/$src-$tgt
+    bin_dir=$base/test-bin-dropout/$domain/$experiment/$src-$tgt/$l
 
     for seed in 1 2 3; do
         echo "Evaluating the $domain domain at seed $seed:"
 
         # If evaluating the baseline change "transformer_optim" to "transformer_baseline" below! 
-        checkpoint_dir=$base/checkpoints/transformer_optim/$experiment/$seed 
-        result_dir=$base/translations/transformer_optim/$size/$seed/$domain 
-
-        # checkpoint_dir=$base/checkpoints/transformer_baseline/$experiment/$seed 
-        # result_dir=$base/translations/transformer_baseline/$size/$seed 
+        checkpoint_dir=$base/checkpoints/transformer_bpe_dropout/$experiment/$seed 
+        result_dir=$base/translations/transformer_bpe_dropout/$size/$seed/$domain 
 
         fairseq-generate $bin_dir \
             --source-lang $src --target-lang $tgt \
