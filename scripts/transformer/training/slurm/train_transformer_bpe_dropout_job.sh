@@ -26,7 +26,7 @@ mkdir -p $dest_path
 # Copy files required to run job 
 rsync --archive --update --compress --progress $src_path/ $dest_path
 
-for seed in 1; do
+for seed in 1 2 3; do
     echo "Training Transformer with BPE-Dropout for $experiment with seed $seed:"
 
     checkpoint_path_scratch=$SCRATCH_HOME/$seed/checkpoints 
