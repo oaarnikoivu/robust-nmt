@@ -5,7 +5,7 @@
 #SBATCH --gres=gpu:1
 #SBATCH --partition=devel 
 
-# e.g. sbatch eval_ood europarl_5k
+# e.g. sbatch eval_job.sh eval_ood europarl_5k
 
 # Activate conda environment 
 #
@@ -14,4 +14,4 @@
 eval_script=$1 
 size=$2 
 
-bash ../$eval_script.sh $$size 
+bash ../$eval_script.sh $size 

@@ -33,7 +33,7 @@ for seed in 222; do
     mkdir -p $checkpoint_path
 
     # Run the experiment
-    bash finetune.sh $size $dest_path $checkpoint_path $seed
+    bash ../finetune.sh $size $dest_path $checkpoint_path $seed
 
     checkpoint_base=$base/checkpoints/mbart/$seed/$size
 

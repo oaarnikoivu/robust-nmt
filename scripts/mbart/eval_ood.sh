@@ -15,7 +15,7 @@ for domain in law medical religion; do
 		DATA_PATH=$base/mbart_processed/$size/$domain
 		checkpoint_dir=$base/checkpoints/mbart/$seed/$size
 		
-		outdir=$base/translations/mbart/$seed/$domain 
+		outdir=$base/translations/mbart/$size/$seed/$domain 
 		
 		mkdir -p $outdir
 		
