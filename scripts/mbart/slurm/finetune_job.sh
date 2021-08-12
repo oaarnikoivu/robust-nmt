@@ -25,7 +25,7 @@ mkdir -p $dest_path
 
 rsync --archive --update --compress --progress $src_path/ $dest_path
 
-for seed in 222; do
+for seed in 222 223 224; do
     echo "Finetuning mBART for $size at seed $seed:"
 
     checkpoint_path=$SCRATCH/mBART/$seed/checkpoints
