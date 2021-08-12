@@ -53,7 +53,7 @@ dec_layerdrop=${10}
 enc_layerdrop=${11}
 smooth=${12}
 
-for seed in 1; do
+for seed in 1 2 3; do
     echo "Training transformer on distilled translations for $experiment with seed $seed:"
 
     checkpoint_path=$SCRATCH_HOME/$seed/checkpoints 
