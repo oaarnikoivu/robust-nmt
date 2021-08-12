@@ -14,6 +14,7 @@
 
 # e.g. sbatch eval_job.sh eval_id_transformer europarl_5k_bpe_10000 europarl_5k 
 # e.g. sbatch eval_job.sh eval_ood_transformer europarl_5k_bpe_10000 europarl_5k
+# e.g. sbatch eval_job.sh eval_id_distillation europarl_5k_bpe_10000 europarl_5k
 
 # Activate conda environment 
 source /home/s2125219/miniconda3/bin/activate

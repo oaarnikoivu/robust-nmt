@@ -13,7 +13,7 @@ layers=$6
 heads=$7
 ffn_dim=$8
 dropout=$9
-attn_dropout=$10
+attn_dropout=${10}
 act_dropout=${11}
 dec_layerdrop=${12}
 enc_layerdrop=${13}
@@ -36,6 +36,7 @@ fairseq-train $data_dir \
         --dropout $dropout --weight-decay 0.0001 \
         --criterion label_smoothed_cross_entropy --label-smoothing $smooth \
         --max-tokens 4096 \
+	--max-epoch 1 \
         --patience $patience \
         --seed $seed \
         --ddp-backend no_c10d \
