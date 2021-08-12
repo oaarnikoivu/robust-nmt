@@ -42,7 +42,7 @@ dec_layerdrop=$9
 enc_layerdrop=${10}
 smooth=${11}
 
-for seed in 1; do
+for seed in 1 2 3; do
     echo "Optimizing transformer for $experiment with seed $seed:"
 
     checkpoint_path=$SCRATCH_HOME/$seed/checkpoints 

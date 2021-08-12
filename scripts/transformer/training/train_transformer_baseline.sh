@@ -12,7 +12,7 @@ fairseq-train $data_dir \
     	--optimizer adam --adam-betas '(0.9, 0.98)' --clip-norm 0.0 \
     	--lr 0.001 --lr-scheduler inverse_sqrt --warmup-updates 4000 \
     	--dropout 0.1 --weight-decay 0.0001 \
-   	 --criterion label_smoothed_cross_entropy --label-smoothing 0.1 \
+		--criterion label_smoothed_cross_entropy --label-smoothing 0.1 \
     	--max-tokens 4096 \
     	--patience $patience \
     	--seed $seed \

@@ -31,12 +31,12 @@ mkdir -p $dest_path
 # Copy files required to run job 
 rsync --archive --update --compress --progress $src_path/ $dest_path
 
-for seed in 1; do
+for seed in 1 2 3; do
     echo "Training baseline Transformer for $experiment with seed $seed:"
 
     checkpoint_path_scratch=$SCRATCH_HOME/$seed/checkpoints 
  
-    rm -rf $checpoint_path_scratch
+    rm -rf $checpoint_path_scratch # delete existing
     mkdir -p $checkpoint_path_scratch
 
     bash ../train_transformer_baseline.sh $dest_path $checkpoint_path_scratch $patience $seed  
