@@ -17,7 +17,7 @@ bin_dir=$base/data-bin-dropout/$experiment/$src-$tgt/$l
 for seed in 1 2 3; do
 	echo "In domain evaluation at seed $seed:"
 	
-	checkpoint_dir=$base/checkpoints/transformer_bpe_dropout/$seed 
+	checkpoint_dir=$base/checkpoints/transformer_bpe_dropout/$experiment/$seed 
 	result_dir=$base/translations/transformer_bpe_dropout/$size/$seed 
 	
 	mkdir -p $result_dir 

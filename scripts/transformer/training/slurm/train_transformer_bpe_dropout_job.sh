@@ -3,35 +3,35 @@
 #SBATCH -o /jmain01/home/JAD003/sxr01/oxa71-sxr01/slogs/slurm-%j.out
 #SBATCH -e /jmain01/home/JAD003/sxr01/oxa71-sxr01/slogs/slurm-%j.err
 #SBATCH --gres=gpu:1
-#SBATCH --partition=small
+#SBATCH --partition=devel
 
-script_dir=`dirname "$0"`
-base=$script_dir/../../../..
-scripts=$base/scripts
+# e.g. sbatch train_transformer_bpe_dropout_job.sh europarl_5k_bpe_30000 
 
 # Activate conda environment 
 #
 #
 
-experiment=$1 
+base=../../../../
 
-data=$base/data
+experiment=$1 
 
 SCRATCH_HOME=/raid/local_scratch/$SLURM_JOB_USER-$SLURM_JOB_ID
 
-src_path=$data/data-bin-dropout/$experiment/en-fi
+src_path=$base/data-bin-dropout/$experiment/en-fi
 dest_path=$SCRATCH_HOME/en-fi
 
+rm -rf $dest_path # remove existing
 mkdir -p $dest_path
 
 # Copy files required to run job 
 rsync --archive --update --compress --progress $src_path/ $dest_path
 
-for seed in 1 2 3; do
+for seed in 1; do
     echo "Training Transformer with BPE-Dropout for $experiment with seed $seed:"
 
     checkpoint_path_scratch=$SCRATCH_HOME/$seed/checkpoints 
- 
+
+    rm -rf $checkpoint_path_scratch # remove existing 
     mkdir -p $checkpoint_path_scratch
 
     bash ../train_transformer_bpe_dropout.sh $dest_path $checkpoint_path_scratch $seed  
@@ -41,7 +41,7 @@ for seed in 1 2 3; do
     echo ""
 
     # Move checkpoints back to base 
-    checkpoint_base=$base/checkpoints/transformer_bpe_dropout/$seed 
+    checkpoint_base=$base/checkpoints/transformer_bpe_dropout/$experiment/$seed 
 
     mkdir -p $checkpoint_base
 
