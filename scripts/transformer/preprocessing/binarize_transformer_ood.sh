@@ -27,8 +27,7 @@ for domain in law medical religion; do
         --srcdict $data_bin/$experiment/$src-$tgt/dict.$src.txt \
         --tgtdict $data_bin/$experiment/$src-$tgt/dict.$tgt.txt \
         --testpref $OOD_TEXT/bpe.test.truecased \
-        --destdir $base/test-bin/$experiment/$domain/$src-$tgt 
-
+        --destdir $base/test-bin/$domain/$experiment/$src-$tgt
     echo ""
 done 
 

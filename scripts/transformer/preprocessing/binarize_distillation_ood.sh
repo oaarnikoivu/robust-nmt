@@ -21,7 +21,7 @@ for domain in law medical religion; do
 		--srcdict $base/data-bin-distilled/$experiment/$src-$tgt/dict.$src.txt \
 		--tgtdict $base/data-bin-distilled/$experiment/$src-$tgt/dict.$tgt.txt \
 		--testpref $TEST/bpe.test.truecased \
-		--destdir $base/test-bin-distilled/$experiment/$domain/$src-$tgt
+		--destdir $base/test-bin-distilled/$domain/$experiment/$src-$tgt
 done
 
 echo "Done."
