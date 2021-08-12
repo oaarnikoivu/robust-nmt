@@ -25,8 +25,10 @@ test=bpe.test.truecased.$src
 ref=$data/in_domain/$size/test.$tgt
 
 for seed in 1 2 3; do
+    echo "Evaluating in-domain test set at seed $seed:"
+
     working_dir=$base/checkpoints/rnn/$experiment/$seed/model
-    result_dir=$base/translations/rnn/$experiment/$seed/translations 
+    result_dir=$base/translations/rnn/$experiment/$seed
 
     mkdir -p $result_dir 
 

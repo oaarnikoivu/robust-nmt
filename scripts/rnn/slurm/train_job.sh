@@ -25,6 +25,8 @@ data=$base/data
 
 # Input data directory path on the DFS
 data_dir=$data/in_domain/$size/$experiment/bpe
+
+# json vocabulary dictionary path 
 dict_dir=$data/in_domain/$size/$experiment
 
 dest_data_dir=$SCRATCH_HOME/data_dir
@@ -39,7 +41,6 @@ rsync --archive --update --compress --progress $data_dir/ $dest_data_dir
 rsync --archive --update --compress --progress $dict_dir/ $dest_dict_dir
 
 # Train model 
-
 for seed in 1 2 3; do 
     bash ../train.sh $experiment $size $dest_data_dir $dest_dict_dir $working_dir $valid_freq
 
