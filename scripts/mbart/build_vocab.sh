@@ -4,6 +4,8 @@ script_dir=`dirname "$0"`
 base=$script_dir/../..
 scripts=$base/scripts
 
+# e.g. bash build_vocab.sh europarl_5k
+
 size=$1
 
 python build_vocab.py \

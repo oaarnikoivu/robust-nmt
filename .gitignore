@@ -13,3 +13,4 @@ translations/
 mbart_processed/
 ft/
 temp.sh
+mbart_data/

@@ -4,6 +4,8 @@ script_dir=`dirname "$0"`
 base=$script_dir/../../..
 scripts=$base/scripts
 
+# e.g. bash binarize.sh europarl_5k
+
 size=$1
 
 DICT=$base/ft/$size/dict.txt

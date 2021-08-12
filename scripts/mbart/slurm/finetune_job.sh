@@ -5,27 +5,27 @@
 #SBATCH --gres=gpu:1
 #SBATCH --partition=small
 
+# e.g. sbatch finetune_job.sh europarl_5k 
+
 # Activate conda environment 
 #
 #
 
-script_dir=`dirname "$0"`
-base=$script_dir/../../..
-scripts=$base/scripts
+base=../../..
 
 size=$1
-seed=$2
 
 SCRATCH=/raid/local_scratch/$SLURM_JOB_USER-$SLURM_JOB_ID
 
 src_path=$base/mbart_processed/$size
+
 dest_path=$SCRATCH/mBART/$size
 
 mkdir -p $dest_path
 
 rsync --archive --update --compress --progress $src_path/ $dest_path
 
-for seed in 222 223 224; 
+for seed in 222; do
     echo "Finetuning mBART for $size at seed $seed:"
 
     checkpoint_path=$SCRATCH/mBART/$seed/checkpoints

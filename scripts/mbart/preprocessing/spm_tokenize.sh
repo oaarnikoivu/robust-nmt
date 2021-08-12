@@ -4,11 +4,13 @@ script_dir=`dirname "$0"`
 base=$script_dir/../../..
 scripts=$base/scripts
 
+# e.g. bash spm_tokenize.sh europarl_5k
+
 set -m
 
 size=$1
 
-data=$base/data 
+data=$base/mbart_data
 
 spm=$base/tools/fairseq/scripts 
 
@@ -24,7 +26,7 @@ TEST=test
 SRC=en_XX
 TGT=fi_FI 
 
-MODEL=./mbart.cc25/sentence.bpe.model
+MODEL=../mbart.cc25/sentence.bpe.model
 
 python $spm/spm_encode.py --model=${MODEL} < ${DATA}/${TRAIN}.${SRC} > ${OUTDIR}/${TRAIN}.spm.${SRC} &
 python $spm/spm_encode.py --model=${MODEL} < ${DATA}/${TRAIN}.${TGT} > ${OUTDIR}/${TRAIN}.spm.${TGT} &

@@ -4,9 +4,9 @@ script_dir=`dirname "$0"`
 base=$script_dir/../..
 scripts=$base/scripts
 
-size=$1
+# e.g. bash trim_mbart.sh europarl_5k
 
-mkdir -p $base/ft
+size=$1
 
 python trim_mbart.py \
     --pre-train-dir ./mbart.cc25 \

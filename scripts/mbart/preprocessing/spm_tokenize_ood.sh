@@ -4,16 +4,18 @@ script_dir=`dirname "$0"`
 base=$script_dir/../../..
 scripts=$base/scripts
 
+# e.g. bash spm_tokenize_ood.sh
+
 set -m
 
 SRC=en_XX
 TGT=fi_FI
 
-data=$base/data 
+data=$base/mbart_data
 
 spm=$base/tools/fairseq/scripts
 
-MODEL=./mbart.cc25/sentence.bpe.model
+MODEL=../mbart.cc25/sentence.bpe.model
 
 for domain in law medical religion; do
 	echo "Tokenizing for the $domain domain:"
@@ -24,6 +26,7 @@ for domain in law medical religion; do
 	mkdir -p $OUTDIR
 	
 	# Deduplicate ood test set
+	
 	test_src_file=$DATA/test.$SRC
 	test_tgt_file=$DATA/test.$TGT
 	
