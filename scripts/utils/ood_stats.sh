@@ -24,3 +24,7 @@ wc -w $fi_file
 
 echo "Number of Finnish types:"
 tr ' ' '\n' < $fi_file | sort | uniq | wc -l
+
+# Average sentence length 
+awk ' { thislen=length($0); printf("%-5s %d\n", NR, thislen); totlen+=thislen}
+END { printf("average: %d\n", totlen/NR); } ' $fi_file
