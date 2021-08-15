@@ -28,11 +28,11 @@ This repository contains experimental code and scripts to reproduce the experime
 
 #### In-domain
 
-    ./scripts/transformer/preprocessing/binarize_transformer.sh [experiment] [corpus size]
+    ./scripts/transformer/preprocessing/binarize_transformer.sh [experiment name] [corpus size]
     
 #### Out-of-domain
 
-    ./scripts/transformer/preprocessing/binarize_transformer_ood.sh [experiment] [corpus size]
+    ./scripts/transformer/preprocessing/binarize_transformer_ood.sh [experiment name] [corpus size]
 
 ## BPE-Dropout
 
@@ -48,11 +48,11 @@ This repository contains experimental code and scripts to reproduce the experime
 
 #### In-domain
     
-    ./scripts/transformer/preprocessing/binarize_bpe_dropout.sh [experiment] [corpus size]
+    ./scripts/transformer/preprocessing/binarize_bpe_dropout.sh [experiment name] [corpus size]
 
 #### Out-of-domain
     
-    ./scripts/transformer/preprocessing/binarize_bpe_dropout_ood.sh [experiment] [corpus size]
+    ./scripts/transformer/preprocessing/binarize_bpe_dropout_ood.sh [experiment name] [corpus size]
      
 ## Transformer Training and Evaluation
 
