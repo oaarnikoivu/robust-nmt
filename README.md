@@ -164,7 +164,7 @@ This allows you to initialize the parameters of the student network using the pa
 
     ./scripts/mbart/preprocessing/binarize.sh [corpus size]
     
-    ./scripts/mbart/preprocessing/binarize_ood.sh [corpus size
+    ./scripts/mbart/preprocessing/binarize_ood.sh [corpus size]
         
 ### Training and Evaluation
 
