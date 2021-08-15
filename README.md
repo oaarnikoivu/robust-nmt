@@ -56,7 +56,7 @@ This repository contains experimental code and scripts to reproduce the experime
      
 ## Transformer Training and Evaluation
 
-To train an indivudal model, see scripts under `scripts/transformer/training</mark>` 
+To train an indivudal model, see scripts under `scripts/transformer/training` 
 
 To evaluate an individual model, see scripts under `scripts/transformer/evaluation`
 
