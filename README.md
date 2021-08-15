@@ -2,76 +2,74 @@
 
 This repository contains experimental code and scripts to reproduce the experiments for my master's thesis titled: "Robustness of Machine Translation for Low-Resource Languages". 
 
-## Basic setup
-
-### Install required librarires
+## Install required librarires
  
     ./scripts/install_libraries.sh 
 
 
-### Download data
+## Download data
 
     ./scripts/download_data.sh data
 
-### Transformer preprocessing
+## Transformer preprocessing
 
-#### Truecaser learned on full in-domain Europarl corpus
+### Truecaser learned on full in-domain Europarl corpus
 
     ./scripts/transformer/preprocessing/truecase.sh
     
-#### In-domain Byte Pair Encoding
+### In-domain Byte Pair Encoding
 
     ./scripts/transformer/preprocessing/preprocess.sh [experiment name] [corpus size] [number of bpe merge operations]
     
-#### Out-of-domain Byte Pair Encoding
+### Out-of-domain Byte Pair Encoding
 
     ./scripts/transformer/preprocessing/preprocess_ood.sh [experiment name] [corpus size] [domain]
     
-#### Binarize 
+### Binarize 
 
-##### In-domain
+#### In-domain
 
     ./scripts/transformer/preprocessing/binarize_transformer.sh [experiment] [corpus size]
     
-##### Out-of-domain
+#### Out-of-domain
 
     ./scripts/transformer/preprocessing/binarize_transformer_ood.sh [experiment] [corpus size]
 
-### BPE-Dropout
+## BPE-Dropout
 
-#### Copy the training corpus l=64 times
+### Copy the training corpus l=64 times
 
     ./scripts/transformer/preprocessing/copy_corpus.sh [corpus size]
     
-#### Apply BPE-Dropout with p = 0.1
+### Apply BPE-Dropout with p = 0.1
 
     ./scripts/transformer/preprocessing/preprocess_bpe_dropout.sh [experiment name] [corpus size]
 
-#### Binarize BPE-Dropout 
+### Binarize BPE-Dropout 
 
-##### In-domain
+#### In-domain
     
     ./scripts/transformer/preprocessing/binarize_bpe_dropout.sh [experiment] [corpus size]
 
-##### Out-of-domain
+#### Out-of-domain
     
     ./scripts/transformer/preprocessing/binarize_bpe_dropout_ood.sh [experiment] [corpus size]
      
 ## Transformer Training and Evaluation
 
-To train an indivudal model, see scripts under scripts/transformer/training
+To train an indivudal model, see scripts under <mark>scripts/transformer/training</mark>
 
-To evaluate an individual model, see scripts under scripts/transformer/evaluation
+To evaluate an individual model, see scripts under <mark>scripts/transformer/evaluation</mark>
 
-Find example slurm scripts for training under scripts/transformer/training/slurm
+Find example slurm scripts for training under <mark>scripts/transformer/training/slurm</mark>
 
-Find example slurm scripts for evaluation under scripts/transformer/evaluation/slurm
+Find example slurm scripts for evaluation under <mark>scripts/transformer/evaluation/slurm</mark>
 
 ## Distillation
 
 For distillation to work, first you must have trained a Transformer on one of the europarl subsets following the steps above.
 
-To generate a distilled training set, see scripts/transformer/translate
+To generate a distilled training set, see <mark>scripts/transformer/translate</mark>
 
 To prepare distilled training set for the student network: 
 
@@ -79,13 +77,13 @@ To prepare distilled training set for the student network:
     
     ./scripts/transformer/preprocessing/binarize_distillation_ood.sh [experiment name] [corpus size]
 
-To train the student network, see scripts under scripts/transformer/training
+To train the student network, see scripts under <mark>scripts/transformer/training</mark>
 
-To evaluate the student network, see scripts under scripts/transformer/evaluation
+To evaluate the student network, see scripts under <mark>scripts/transformer/evaluation</mark>
 
 ### Distillation training
 
-For distillation training to work with Fairseq, modify the <strong>TransformerDecoder</strong> class under /tools/fairseq/fairseq/models/transformer.py to the following:
+For distillation training to work with Fairseq, modify the <strong>TransformerDecoder</strong> class under <mark>/tools/fairseq/fairseq/models/transformer.py</mark> to the following:
 
 ```
 def upgrade_state_dict_named(self, state_dict, name):
@@ -171,13 +169,13 @@ This allows you to initialize the parameters of the student network using the pa
         
 ### Training and Evaluation
 
-For fine-tuning mBART25, see /scripts/mbart/finetune.sh
+For fine-tuning mBART25, see <mark>/scripts/mbart/finetune.sh</mark>
 
-For evaluating mBART25, see /scripts/mbart/eval.sh and /scripts/mbart/eval_ood.sh
+For evaluating mBART25, see <mark>/scripts/mbart/eval.sh and /scripts/mbart/eval_ood.sh</mark>
 
-Find example slurm scripts for training and evaluation in /scripts/mbart/slurm
+Find example slurm scripts for training and evaluation in <mark>/scripts/mbart/slurm</mark>
 
-I encountered a bug when fine-tuning mBART25 which was fixed by modifying the <strong>__init__</strong> function of the <strong>TranslationFromPretrainedBARTTask</strong> class under /tools/fairseq/fairseq/tasks/translation_from_pretrained_bart.py to the following: 
+I encountered a bug when fine-tuning mBART25 which was fixed by modifying the <strong>__init__</strong> function of the <strong>TranslationFromPretrainedBARTTask</strong> class under <mark>/tools/fairseq/fairseq/tasks/translation_from_pretrained_bart.py</mark> to the following: 
 
 ```
 def __init__(self, args, src_dict, tgt_dict):
@@ -198,6 +196,6 @@ def __init__(self, args, src_dict, tgt_dict):
     
 ### Training and Evaluation
 
-See /scripts/rnn/train.sh and /scripts/rnn/translate.sh
+See <mark>/scripts/rnn/train.sh</mark> and <mark>/scripts/rnn/translate.sh</mark>
 
-Find example slurm scripts for training and evaluation in /scripts/rnn/slurm
+Find example slurm scripts for training and evaluation in <mark>/scripts/rnn/slurm</mark>
