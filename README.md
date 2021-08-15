@@ -6,7 +6,6 @@ This repository contains experimental code and scripts to reproduce the experime
  
     ./scripts/install_libraries.sh 
 
-
 ## Download data
 
     ./scripts/download_data.sh data
@@ -57,13 +56,13 @@ This repository contains experimental code and scripts to reproduce the experime
      
 ## Transformer Training and Evaluation
 
-To train an indivudal model, see scripts under <mark>scripts/transformer/training</mark>
+To train an indivudal model, see scripts under `scripts/transformer/training</mark>` 
 
-To evaluate an individual model, see scripts under <mark>scripts/transformer/evaluation</mark>
+To evaluate an individual model, see scripts under `scripts/transformer/evaluation`
 
-Find example slurm scripts for training under <mark>scripts/transformer/training/slurm</mark>
+Find example slurm scripts for training under `scripts/transformer/training/slurm`
 
-Find example slurm scripts for evaluation under <mark>scripts/transformer/evaluation/slurm</mark>
+Find example slurm scripts for evaluation under `scripts/transformer/evaluation/slurm`
 
 ## Distillation
 
@@ -83,7 +82,7 @@ To evaluate the student network, see scripts under <mark>scripts/transformer/eva
 
 ### Distillation training
 
-For distillation training to work with Fairseq, modify the <strong>TransformerDecoder</strong> class under <mark>/tools/fairseq/fairseq/models/transformer.py</mark> to the following:
+For distillation training to work with Fairseq, modify the <strong>TransformerDecoder</strong> class under `/tools/fairseq/fairseq/models/transformer.py` to the following:
 
 ```
 def upgrade_state_dict_named(self, state_dict, name):
@@ -169,13 +168,13 @@ This allows you to initialize the parameters of the student network using the pa
         
 ### Training and Evaluation
 
-For fine-tuning mBART25, see <mark>/scripts/mbart/finetune.sh</mark>
+For fine-tuning mBART25, see `/scripts/mbart/finetune.sh`
 
-For evaluating mBART25, see <mark>/scripts/mbart/eval.sh and /scripts/mbart/eval_ood.sh</mark>
+For evaluating mBART25, see `/scripts/mbart/eval.sh and /scripts/mbart/eval_ood.sh`
 
-Find example slurm scripts for training and evaluation in <mark>/scripts/mbart/slurm</mark>
+Find example slurm scripts for training and evaluation in `/scripts/mbart/slurm`
 
-I encountered a bug when fine-tuning mBART25 which was fixed by modifying the <strong>__init__</strong> function of the <strong>TranslationFromPretrainedBARTTask</strong> class under <mark>/tools/fairseq/fairseq/tasks/translation_from_pretrained_bart.py</mark> to the following: 
+I encountered a bug when fine-tuning mBART25 which was fixed by modifying the <strong>__init__</strong> function of the <strong>TranslationFromPretrainedBARTTask</strong> class under `/tools/fairseq/fairseq/tasks/translation_from_pretrained_bart.py` to the following: 
 
 ```
 def __init__(self, args, src_dict, tgt_dict):
@@ -196,6 +195,6 @@ def __init__(self, args, src_dict, tgt_dict):
     
 ### Training and Evaluation
 
-See <mark>/scripts/rnn/train.sh</mark> and <mark>/scripts/rnn/translate.sh</mark>
+See `/scripts/rnn/train.sh` and `/scripts/rnn/translate.sh`
 
-Find example slurm scripts for training and evaluation in <mark>/scripts/rnn/slurm</mark>
+Find example slurm scripts for training and evaluation in `/scripts/rnn/slurm`
